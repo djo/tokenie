@@ -1,7 +1,10 @@
 require 'tokenie'
 
 describe Tokenie do
-  it "should be a Module" do
-    Tokenie.class.should eq(Module)
+  describe ".friendly" do
+    it "generates a friendly string randomically" do
+      SecureRandom.stub(:base64).and_return('qwerty+/=lIO0o')
+      Tokenie.friendly.should eq('qwertyabcdefgh')
+    end
   end
 end
