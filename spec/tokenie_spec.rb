@@ -2,16 +2,28 @@ require 'spec_helper'
 
 describe Tokenie do
   describe ".friendly" do
-    before(:each) do
-      SecureRandom.stub(:base64) { 'qwerty+/=lIO0o' }
-    end
-
-    it "generates a string randomically with 6 characters by default" do
+    it "generates a token with 6 characters by default" do
+      SecureRandom.stub(:base64) { 'qwertytoken' }
       Tokenie.friendly.should eq('qwerty')
     end
 
-    it "generates a string randomically with 2 characters as passed" do
+    it "generates a token with 2 characters as passed" do
+      SecureRandom.stub(:base64) { 'qwerty' }
       Tokenie.friendly(:length => 2).should eq('qw')
+    end
+
+    it "generates a friendly token" do
+      SecureRandom.stub(:base64) { '+/=lIO0o' }
+      Tokenie.friendly(:length => 8).should eq('abcdefgh')
+    end
+
+    it "generates an unique token" do
+      existing_tokens = ['qwerty', 'abcdef']
+      generation_line = ['qwerty', 'abcdef', 'abcde1', 'abcde2']
+      SecureRandom.stub(:base64) { generation_line.shift }
+
+      token = Tokenie.friendly { |t| existing_tokens.include?(t) }
+      token.should eq('abcde1')
     end
 
     it "raises an argument error if length is greater than 16" do
