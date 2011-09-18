@@ -12,13 +12,14 @@ Install as a gem from GemCutter:
 
 Generate a token:
 
+  require 'tokenie'
   Tokenie.friendly # => "De6paD"
 
 By default it uses 6 characters for end string. To change it use :length option:
 
   Tokenie.friendly(:length => 8) # => "gRaxwBg7"
 
-If you want to ensure uniqueness you should provide a block which returns false in the case that means a token is not included in your storage:
+If you want to ensure uniqueness you should provide a block which returns false in the case that means the token is not included in your storage:
 
   existing_tokens = ['qwerty1', 'qwerty2', 'qwerty3']
   Tokenie.friendly { |token| existing_tokens.include?(token) }
@@ -26,6 +27,10 @@ If you want to ensure uniqueness you should provide a block which returns false 
 Example with ActiveRecord:
 
   Tokenie.friendly { |t| self.class.exists?(:token => t) }
+
+== Dependencies
+
+* Ruby 1.8.7 or later
 
 == Maintainers
 
