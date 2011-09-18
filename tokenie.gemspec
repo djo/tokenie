@@ -7,9 +7,9 @@ Gem::Specification.new do |s|
   s.version     = Tokenie::VERSION
   s.authors     = ["Andrew Djoga"]
   s.email       = ["andrew.djoga@gmail.com"]
-  s.homepage    = ""
-  s.summary     = %q{TODO: Write a gem summary}
-  s.description = %q{TODO: Write a gem description}
+  s.homepage    = "http://github.com/Djo/tokenie/"
+  s.summary     = %q{Token generation}
+  s.description = %q{Generation a friendly token randomically}
 
   s.rubyforge_project = "tokenie"
 
