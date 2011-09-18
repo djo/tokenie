@@ -1,0 +1,32 @@
+= Tokenie
+
+Tokenie gem provides generation friendly token randomically.
+
+== Installation
+
+Install as a gem from GemCutter:
+
+  gem install tokenie
+
+== Getting Started
+
+Generate a token:
+
+  Tokenie.friendly # => "De6paD"
+
+By default it uses 6 characters for end string. To change it use :length option:
+
+  Tokenie.friendly(:length => 8) # => "gRaxwBg7"
+
+If you want to ensure uniqueness you should provide a block which returns false in the case that means a token is not included in your storage:
+
+  existing_tokens = ['qwerty1', 'qwerty2', 'qwerty3']
+  Tokenie.friendly { |token| existing_tokens.include?(token) }
+
+Example with ActiveRecord:
+
+  Tokenie.friendly { |t| self.class.exists?(:token => t) }
+
+== Maintainers
+
+* Andrew Djoga <andrew.djoga@gmail.com>
