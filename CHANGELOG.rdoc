@@ -1,0 +1,8 @@
+== 0.0.2
+
+* enhancements
+  * Added '1' as unfriendly symbol
+
+== 0.0.1
+
+* Tokenie.friendly
