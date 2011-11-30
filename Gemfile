@@ -1,4 +1,4 @@
-source "http://rubygems.org"
+source :rubygems
 
-# Specify your gem's dependencies in tokenie.gemspec
-gemspec
+gem "rake"
+gem 'rspec', '~> 2.7.0'
