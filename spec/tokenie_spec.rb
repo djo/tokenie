@@ -18,12 +18,12 @@ describe Tokenie do
     end
 
     it "generates an unique token" do
-      existing_tokens = ['qwerty', 'abcdef']
-      generation_line = ['qwerty', 'abcdef', 'abcdeg', 'abcdek']
+      existing_tokens = ['qwerty', 'qwert2']
+      generation_line = ['qwerty', 'qwert2', 'qwert3', 'qwert4']
       SecureRandom.stub(:base64) { generation_line.shift }
 
       token = Tokenie.friendly { |t| existing_tokens.include?(t) }
-      token.should eq('abcdeg')
+      token.should eq('qwert3')
     end
 
     it "raises an argument error if length is greater than 16" do
