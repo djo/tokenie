@@ -13,17 +13,17 @@ describe Tokenie do
     end
 
     it "generates a friendly token" do
-      SecureRandom.stub(:base64) { '+/=lIO0o' }
-      Tokenie.friendly(:length => 8).should eq('abcdefgh')
+      SecureRandom.stub(:base64) { '+/=1lIO0o' }
+      Tokenie.friendly(:length => 9).should eq('abcdefghj')
     end
 
     it "generates an unique token" do
       existing_tokens = ['qwerty', 'abcdef']
-      generation_line = ['qwerty', 'abcdef', 'abcde1', 'abcde2']
+      generation_line = ['qwerty', 'abcdef', 'abcdeg', 'abcdek']
       SecureRandom.stub(:base64) { generation_line.shift }
 
       token = Tokenie.friendly { |t| existing_tokens.include?(t) }
-      token.should eq('abcde1')
+      token.should eq('abcdeg')
     end
 
     it "raises an argument error if length is greater than 16" do
