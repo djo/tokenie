@@ -1,4 +1,5 @@
 = Tokenie
+{<img src="https://secure.travis-ci.org/Djo/tokenie.png" />}[http://travis-ci.org/Djo/tokenie]
 
 Tokenie gem provides generation friendly token randomically.
 
