@@ -1,7 +1,7 @@
 = Tokenie
 {<img src="https://secure.travis-ci.org/Djo/tokenie.png" />}[http://travis-ci.org/Djo/tokenie]
 
-Tokenie gem provides generation friendly token randomically.
+Tokenie gem provides generation friendly token randomically. Symbols '+/=1lIO0o' are replaced with 'abcdefghj'.
 
 == Installation
 
