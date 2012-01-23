@@ -1,4 +1,8 @@
-source :rubygems
+source 'http://rubygems.org'
 
-gem "rake"
-gem 'rspec', '~> 2.7.0'
+group :test do
+  gem "rake", "~> 0.9.2.2"
+end
+
+# Specify your gem's dependencies in simple_analytics.gemspec
+gemspec
