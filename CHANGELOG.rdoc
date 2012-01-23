@@ -1,7 +1,12 @@
+== 0.0.3
+
+* enhancements
+  * Fix gemfile config for development
+
 == 0.0.2
 
 * enhancements
-  * Added '1' as unfriendly symbol
+  * Add '1' as unfriendly symbol
 
 == 0.0.1
 
