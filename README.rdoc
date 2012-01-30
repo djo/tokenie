@@ -1,11 +1,11 @@
 = Tokenie
 {<img src="https://secure.travis-ci.org/Djo/tokenie.png" />}[http://travis-ci.org/Djo/tokenie]
 
-Tokenie gem provides generation friendly token randomically. Symbols '+/=1lIO0o' are replaced with 'abcdefghj'.
+Tokenie gem provides generation friendly token randomically. Symbols '+/=1lIO0o' are replaced with 'abcdefghj'. Inspired by devise's friendly token generation.
 
 == Installation
 
-Install as a gem from GemCutter:
+Install as a gem from RubyGems:
 
   gem install tokenie
 
@@ -32,7 +32,3 @@ An example with ActiveRecord:
 == Dependencies
 
 * Ruby 1.8.7 or later
-
-== Maintainers
-
-* Andrew Djoga <andrew.djoga@gmail.com>
